@@ -4,18 +4,17 @@
 nginx-proxy:
   #image: dr.yellotravel.com/nginx-proxy:1.9.6
   image: php7
-  command: bash -c "php-fpm -y /etc/php-fpm.conf; nginx"
+  command: bash -c "nginx;php-fpm -y /etc/php-fpm.conf"
   #command: bash -c "while [ 0 ]; do sleep 1;done"
-  # volumes:
-  #   - ./conf/php.ini:/etc/php.ini
-  #   - ./conf/www.conf:/etc/php-fpm.d/www.conf
-  #   - ./conf/nginx_default.conf:/etc/nginx/nginx.conf
-  #   - ./www:/var/www/html
-  #   - ./logs:/var/log/nginx
-  #   - /var/run/docker.sock:/tmp/docker.sock:ro
-  #   - /tmp/docker:/tmp/docker
-  #   - /etc/localtime:/etc/localtime:ro
-  #   - ./conf/vhost.d:/etc/nginx/vhost.d:ro
+  volumes:
+    - ./config/www.conf:/etc/php-fpm.d/www.conf
+    - ./config/nginx.conf:/etc/nginx/nginx.conf
+    - ./config:/var/www/html
+    - ./logs:/var/log/nginx
+    - /etc/localtime:/etc/localtime:ro
+    - ./config/vhost.d:/etc/nginx/vhost.d:ro
+    - ./config/php.ini:/etc/php.ini:ro
+    - ./config/template:/template
 
   ports:
    - "80:80"

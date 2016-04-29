@@ -214,7 +214,7 @@ make install   > /dev/null 2>&1
 popd
 
 mkdir -p /etc/php-fpm.d/
-
+mkdir -p /var/www/html
 
 cp -vf /usr/local/conf/www.conf /etc/php-fpm.d/
 cp -vf /usr/local/conf/php-fpm.conf /etc/

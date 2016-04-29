@@ -1,0 +1,23 @@
+[29-Apr-2016 04:27:28] NOTICE: fpm is running, pid 8
+[29-Apr-2016 04:27:28] NOTICE: ready to handle connections
+[29-Apr-2016 04:28:29] NOTICE: fpm is running, pid 7
+[29-Apr-2016 04:28:29] NOTICE: ready to handle connections
+[29-Apr-2016 04:28:34] WARNING: [pool www] child 13 said into stderr: "NOTICE: PHP message: PHP Parse error:  syntax error, unexpected end of file in /var/www/html/index.php on line 2"
+[29-Apr-2016 04:28:50] NOTICE: fpm is running, pid 7
+[29-Apr-2016 04:28:50] NOTICE: ready to handle connections
+[29-Apr-2016 04:29:23] NOTICE: fpm is running, pid 7
+[29-Apr-2016 04:29:23] NOTICE: ready to handle connections
+[29-Apr-2016 04:30:57] NOTICE: fpm is running, pid 7
+[29-Apr-2016 04:30:57] NOTICE: ready to handle connections
+[29-Apr-2016 04:32:00] NOTICE: fpm is running, pid 7
+[29-Apr-2016 04:32:00] NOTICE: ready to handle connections
+[29-Apr-2016 04:34:18] NOTICE: fpm is running, pid 7
+[29-Apr-2016 04:34:18] NOTICE: ready to handle connections
+[29-Apr-2016 04:50:35] NOTICE: fpm is running, pid 7
+[29-Apr-2016 04:50:35] NOTICE: ready to handle connections
+[29-Apr-2016 04:51:38] NOTICE: fpm is running, pid 7
+[29-Apr-2016 04:51:38] NOTICE: ready to handle connections
+[29-Apr-2016 05:43:54] NOTICE: fpm is running, pid 7
+[29-Apr-2016 05:43:54] NOTICE: ready to handle connections
+[29-Apr-2016 05:47:47] NOTICE: fpm is running, pid 7
+[29-Apr-2016 05:47:47] NOTICE: ready to handle connections
