@@ -1,0 +1,32 @@
+#php7:
+# php-fpm -F -y /etc/php-fpm.conf
+
+nginx-proxy:
+  #image: dr.yellotravel.com/nginx-proxy:1.9.6
+  image: php7
+  command: bash -c "php-fpm -y /etc/php-fpm.conf; nginx"
+  #command: bash -c "while [ 0 ]; do sleep 1;done"
+  # volumes:
+  #   - ./conf/php.ini:/etc/php.ini
+  #   - ./conf/www.conf:/etc/php-fpm.d/www.conf
+  #   - ./conf/nginx_default.conf:/etc/nginx/nginx.conf
+  #   - ./www:/var/www/html
+  #   - ./logs:/var/log/nginx
+  #   - /var/run/docker.sock:/tmp/docker.sock:ro
+  #   - /tmp/docker:/tmp/docker
+  #   - /etc/localtime:/etc/localtime:ro
+  #   - ./conf/vhost.d:/etc/nginx/vhost.d:ro
+
+  ports:
+   - "80:80"
+   - "443:443"
+   - "9000:9000"
+
+  environment:
+   #  VIRTUAL_HOST: carem.test.co, carea.test.co
+   #  CERT_NAME: server
+    # WWW_NODEJS: "/home/www_nodejs"
+    # APP: "jcs_chat_client/bin/www"
+    # NODE_PATH: "/usr/local/node/lib/node_modules"
+    DEBUG: "*"
+    #PATH: "/usr/local/node/bin:$PATH"
