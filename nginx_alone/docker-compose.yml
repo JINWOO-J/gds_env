@@ -1,0 +1,32 @@
+nginx:
+  image: nginx:1.11.0
+#   command: bash -c "nginx;php-fpm -y /etc/php-fpm.conf"
+#   command: bash -c "while [ 0 ]; do sleep 1;done"
+  volumes:
+#     - ./config/www.conf:/etc/php-fpm.d/www.conf
+#     - ./config/nginx.conf:/etc/nginx/nginx.conf
+    - ./config:/var/www/html
+    - ./logs:/var/log/nginx
+    - /etc/localtime:/etc/localtime:ro
+#     - ./config/vhost.d:/etc/nginx/vhost.d:ro
+#     - ./config/php.ini:/etc/php.ini:ro
+#     - ./config/template:/template
+
+  ports:
+   - "80"
+   - "443"
+
+  environment:
+   #  VIRTUAL_HOST: carem.test.co, carea.test.co
+   #  CERT_NAME: server
+    # WWW_NODEJS: "/home/www_nodejs"
+    # APP: "jcs_chat_client/bin/www"
+    # NODE_PATH: "/usr/local/node/lib/node_modules"
+    DEBUG: "*"
+    #PATH: "/usr/local/node/bin:$PATH"
+
+    USE_DOCKERIZE: "yes"    
+    UPSTREAM: "php_container:9000"
+    DOMAIN: "dev.yt.com"
+    LOCATION: " "
+
