@@ -17,14 +17,6 @@ nginx:
    - "443"
 
   environment:
-   #  VIRTUAL_HOST: carem.test.co, carea.test.co
-   #  CERT_NAME: server
-    # WWW_NODEJS: "/home/www_nodejs"
-    # APP: "jcs_chat_client/bin/www"
-    # NODE_PATH: "/usr/local/node/lib/node_modules"
-    DEBUG: "*"
-    #PATH: "/usr/local/node/bin:$PATH"
-
     USE_DOCKERIZE: "yes"    
     UPSTREAM: "php_container:9000"
     DOMAIN: "dev.yt.com"

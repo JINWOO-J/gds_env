@@ -10,6 +10,8 @@ MAINTAINER JINWOO <jinwoo@yellotravel.com>
 RUN ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 ENV PHP_VERSION 7.0.6
+ENV DOCKERIZE_VERSION v0.2.0
+
 ENV PHP_EXTRA_CONFIGURE_ARGS --enable-fpm --with-fpm-user=app --with-fpm-group=app --with-curl --with-iconv \
                          --with-libdir=lib64 --with-openssl --with-config-file-scan-dir --enable-opcache \
                          --with-gd \
@@ -102,13 +104,17 @@ RUN cp /usr/src/php/php.ini-production ${PHP_INI_DIR}/php.ini
 RUN sh -c "echo 'date.timezone = asia/seoul' >> ${PHP_INI_DIR}/php.ini"
 RUN sed -i 's/short_open_tag = Off/short_open_tag = On/g' ${PHP_INI_DIR}/php.ini
 
+RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && rm -f dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+
+
 #
 # Docker properties
 #
 
 VOLUME ["/var/www/html", "/etc/nginx"]
 
-EXPOSE 80
-EXPOSE 443
+EXPOSE 9000
 
 CMD ["/usr/local/sbin/runsvdir-init"]
